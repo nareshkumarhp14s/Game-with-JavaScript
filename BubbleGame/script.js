@@ -22,7 +22,12 @@ function runTimer() {
         }
         else {
             clearInterval(Timerint);
-            document.querySelector("#pbtm").innerHTML = `<h1>Game over = ${score} </h1>`;
+            document.querySelector("#pbtm").innerHTML = `<h1>Game over <br> Score: ${score} </h1> 
+            <ion-icon id="reloadButton" name="refresh-outline"></ion-icon>`;
+
+            document.querySelector("#reloadButton").addEventListener("click", function () {
+                reloadPage();
+            });
 
         }
 
@@ -44,9 +49,7 @@ document.querySelector("#pbtm").addEventListener("click", function (details) {
         getNewhit();
     }
 });
-document.querySelector("#reloadButton").addEventListener("click", function () {
-    reloadPage();
-});
+
 getNewhit();
 runTimer();
 makeBubble();
